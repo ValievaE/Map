@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Map</string>
+    <string name="txt_search">Что ищем?</string>
+    <string name="btn_search">Ищем</string>
+</resources>
