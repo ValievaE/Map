@@ -13,11 +13,15 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     private String input = "";
+    private EditText coordinates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        coordinates = findViewById(R.id.editTextCoordinates);
+
 
         Button buttonSearch = findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(new View.OnClickListener() {
@@ -32,13 +36,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean coordinateType() {
-        EditText coordinates = findViewById(R.id.editTextCoordinates);
         input = coordinates.getText().toString();
-        char[] inputChar = input.toCharArray();
-        boolean b = false;
-        for (char ch : inputChar) {
-            b = Character.isLetter(ch);
-        }
+        boolean b = Character.isLetter(input.charAt(0));
         return b;
     }
 
