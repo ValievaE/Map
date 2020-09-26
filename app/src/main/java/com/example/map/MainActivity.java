@@ -37,7 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean coordinateType() {
         input = coordinates.getText().toString();
-        boolean b = Character.isLetter(input.charAt(0));
+        char[] charArray = input.toCharArray();
+        boolean b = false;
+        for (int i = 0; i < charArray.length; i++) {
+            b = Character.isLetter(charArray[i]);
+            if (b == true) break;
+        }
         return b;
     }
 
